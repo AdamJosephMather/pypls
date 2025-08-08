@@ -1,0 +1,6 @@
+{
+	"LSPs": {
+		"language_name_here": "lsp_command_here"
+	},
+	"build_command": "cd /d C:\\Users\\adamj\\OneDrive\\Documents\\Go\\pypls && go build ."
+}

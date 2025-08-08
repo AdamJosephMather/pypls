@@ -274,30 +274,11 @@ func (h *handler) Handle(ctx context.Context, conn *jsonrpc2.Conn, req *jsonrpc2
 func main() {
 	defaultCompletions = make(map[string]int64)
 	
-	defaultCompletions["for"] = 1
-	defaultCompletions["range"] = 1
-	defaultCompletions["import"] = 1
-	defaultCompletions["int"] = 1
-	defaultCompletions["if"] = 1
-	defaultCompletions["elif"] = 1
-	defaultCompletions["else"] = 1
-	defaultCompletions["in"] = 1
-	defaultCompletions["open"] = 1
-	defaultCompletions["sort"] = 1
-	defaultCompletions["sorted"] = 1
-	defaultCompletions["def"] = 1
-	defaultCompletions["print"] = 1
-	defaultCompletions["continue"] = 1
-	defaultCompletions["break"] = 1
-	defaultCompletions["return"] = 1
-	defaultCompletions["not"] = 1
-	defaultCompletions["delete"] = 1
-	defaultCompletions["eval"] = 1
-	defaultCompletions["True"] = 1
-	defaultCompletions["False"] = 1
-	defaultCompletions["str"] = 1
-	defaultCompletions["while"] = 1
-	defaultCompletions["as"] = 1
+	defs := []string{"for", "range", "import", "int", "if", "elif", "else", "in", "open", "sort", "sorted", "def", "print", "continue", "break", "return", "not", "del", "eval", "True", "False", "str", "while", "and", "as", "is", "or", "try", "except", "finally", "raise", "assert", "with", "lambda", "yield", "async", "await", "class", "from", "global", "nonlocal", "pass", "None", "abs", "all", "any", "ascii", "bin", "bool", "breakpoint", "bytearray", "bytes", "callable", "chr", "classmethod", "compile", "complex", "delattr", "dict", "dir", "divmod", "enumerate", "exec", "filter", "float", "format", "frozenset", "getattr", "globals", "hasattr", "hash", "help", "hex", "id", "input", "isinstance", "issubclass", "iter", "len", "list", "locals", "map", "max", "memoryview", "min", "next", "object", "oct", "pow", "property", "repr", "reversed", "round", "set", "setattr", "slice", "staticmethod", "sum", "super", "tuple", "type", "vars", "zip", "__import__"}
+	
+	for _, d := range defs {
+		defaultCompletions[d] = 11
+	}
 	
 	files = make(map[string]OpenFile)
 	
